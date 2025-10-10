@@ -118,6 +118,19 @@
 
     /* Sticky donate */
     .sticky-donate { position: fixed; right: 18px; bottom: 18px; z-index: 60; }
+      /* === Slider stilleri === */
+    .slider { position: relative; width:100%; height:100%; }
+    .slides { position: absolute; inset:0; }
+    .slide { position:absolute; inset:0; width:100%; height:100%; object-fit: cover; object-position:center; opacity:0; transition: opacity .8s ease; filter:saturate(1.05); }
+    .slide.is-active { opacity:1; }
+    .ctrl { position:absolute; z-index:3; top:50%; transform: translateY(-50%); background: rgba(0,0,0,.35); border:1px solid #ffffff33; color:#fff; font-size:24px; width:40px; height:40px; border-radius:999px; display:grid; place-items:center; cursor:pointer; }
+    .ctrl:hover { background: rgba(0,0,0,.5); }
+    .ctrl.prev { left:12px; }
+    .ctrl.next { right:12px; }
+    .dots { position:absolute; z-index:3; left:0; right:0; bottom:12px; display:flex; gap:8px; justify-content:center; }
+    .dots button { width:8px; height:8px; border-radius:999px; border:1px solid #ffffffaa; background:#ffffff55; box-shadow: 0 0 0 2px rgba(0,0,0,.15); cursor:pointer; }
+    .dots button.is-active { background:#ffffff; border-color:#ffffff; }
+
   </style>
 </head>
 <body>
@@ -149,8 +162,20 @@
   <main id="icerik">
     <!-- HERO görseli: assets/foto2.jpg (kampüs gece/üstten) -->
     <div class="hero">
+      <!-- HERO: Slaytlı ana görsel -->
       <div class="hero-media" aria-hidden="true">
-        <img src="assets/foto2.jpg" alt="Gaziantep Üniversitesi Kampüs Gece Görünümü" />
+        <div class="slider" role="region" aria-roledescription="slayt" aria-label="Kampüs görselleri" tabindex="0">
+          <div class="slides">
+            <img src="./assets/foto2.jpg" alt="GAÜN Kampüs – Havadan gece" class="slide is-active" />
+            <img src="./assets/foto1.jpg" alt="GAÜN Kampüs – Gece" class="slide" />
+            <img src="./assets/foto3.jpg" alt="GAÜN Ana Kapı" class="slide" />
+            <img src="./assets/foto4.jpg" alt="GAÜN Ana Kapı – Gündüz" class="slide" />
+            <img src="./assets/foto5.jpg" alt="15 Temmuz Anıtı ve Bayraklar" class="slide" />
+          </div>
+          <button class="ctrl prev" aria-label="Önceki görsel">‹</button>
+          <button class="ctrl next" aria-label="Sonraki görsel">›</button>
+          <div class="dots" aria-hidden="true"></div>
+        </div>
       </div>
       <div class="container hero-inner">
         <div class="hero-card">
