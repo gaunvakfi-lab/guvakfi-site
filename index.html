@@ -1,374 +1,495 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gaziantep Üniversitesi Vakfı</title>
-  <meta name="description" content="Gaziantep Üniversitesi Vakfı – Burslar, Bağış ve Kurumsal Bilgiler" />
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --gun-navy:#002B64; --gun-red:#CE1432; --gun-gray:#D1D3D4;
-      --bg:#07142d; --surface:#0b1b3b; --card:#0f234a; --muted:var(--gun-gray);
-      --text:#ffffff; --accent:var(--gun-navy); --accent-2:var(--gun-red); --border:#17325f;
-    }
-    *{ box-sizing:border-box; margin:0; padding:0; }
-    body{
-      font-family: Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial;
-      color: var(--text);
-      background: radial-gradient(80% 60% at 50% 0%, #102a58 0%, #07142d 70%);
-      line-height:1.6;
-    }
-    a{ color:inherit; text-decoration:none; }
-    img{ max-width:100%; height:auto; display:block; }
-    .container{ width:100%; max-width:1200px; margin:auto; padding:0 18px; }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gaziantep Üniversitesi Vakfı</title>
+<meta name="description" content="Gaziantep Üniversitesi Vakfı – Burslar, Bağış ve Kurumsal Bilgiler" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gun-navy:#002B64; --gun-red:#CE1432; --gun-gray:#D1D3D4;
+  --bg:#07142d; --surface:#0b1b3b; --card:#0f234a;
+  --muted:var(--gun-gray); --text:#ffffff; --accent:var(--gun-navy);
+  --accent-2:var(--gun-red); --border:#17325f;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial;
+  color:var(--text);
+  background:radial-gradient(80% 60% at 50% 0%,#102a58 0%,#07142d 70%);
+  line-height:1.6;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+.container{width:100%;max-width:1200px;margin:auto;padding:0 18px}
 
-    /* Header */
-    header{ position:sticky; top:0; z-index:50; backdrop-filter: blur(8px);
-      background: rgba(14,18,35,.78); border-bottom:1px solid var(--border); }
-    .nav{ display:flex; align-items:center; justify-content:space-between; height:76px; }
-    .brand{ display:flex; align-items:center; gap:10px; font-weight:800; }
-    .logo{ width:38px; height:38px; border-radius:10px;
-      background: linear-gradient(135deg, var(--accent), #0b2a63);
-      display:grid; place-items:center; color:#fff; font-weight:900;
-      box-shadow: 0 10px 24px rgba(0,0,0,.35);
-    }
-    .nav-links{ display:flex; gap:18px; align-items:center; }
-    .nav-links a{ padding:10px 12px; color:var(--muted); font-weight:700; font-size:14px; border-radius:10px; }
-    .nav-links a:hover{ color:var(--text); background:rgba(255,255,255,.08); }
-    .menu-btn{ display:none; border:1px solid var(--border); background:#0f1936; border-radius:10px; padding:10px; color:#fff; }
-    .mobile-menu{ display:none; border-top:1px solid var(--border); padding:10px; }
-    .mobile-menu a{ display:block; padding:10px; color:var(--muted); }
-    .mobile-menu a:hover{ background:rgba(255,255,255,.1); }
+/* Header */
+header{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:blur(8px);
+  background:rgba(14,18,35,.78);
+  border-bottom:1px solid var(--border)
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800}
+.logo{
+  width:38px;height:38px;border-radius:10px;
+  background:linear-gradient(135deg,var(--accent),#0b2a63);
+  display:grid;place-items:center;color:#fff;font-weight:900;
+  box-shadow:0 10px 24px rgba(0,0,0,.35)
+}
+.nav-links{display:flex;gap:18px;align-items:center}
+.nav-links a{padding:10px 12px;color:var(--muted);font-weight:700;font-size:14px;border-radius:10px}
+.nav-links a:hover{color:var(--text);background:rgba(255,255,255,.08)}
+.menu-btn{display:none;border:1px solid var(--border);background:#0f1936;border-radius:10px;padding:10px;color:#fff}
+.mobile-menu{display:none;border-top:1px solid var(--border);padding:10px}
+.mobile-menu a{display:block;padding:10px;color:var(--muted)}
+.mobile-menu a:hover{background:rgba(255,255,255,.1)}
 
-    /* Buttons */
-    .btn{ display:inline-flex; align-items:center; justify-content:center; padding:12px 18px;
-      border-radius:14px; font-weight:800; border:1px solid var(--border); color:var(--text); transition:.1s ease; cursor:pointer; }
-    .btn:hover{ transform:translateY(-1px); }
-    .btn-primary{ background: linear-gradient(180deg, var(--accent), #0e2a5c); }
-    .btn-danger{ background: linear-gradient(180deg, var(--accent-2), #8e1f2a); border-color:#8e1f2a; }
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:12px 18px;border-radius:14px;font-weight:800;
+  border:1px solid var(--border);color:var(--text);
+  transition:.1s ease;cursor:pointer
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:linear-gradient(180deg,var(--accent),#0e2a5c)}
+.btn-danger{background:linear-gradient(180deg,var(--accent-2),#8e1f2a);border-color:#8e1f2a}
 
-    /* Sections */
-    section{ padding:60px 0; }
-    h1,h2,h3{ font-weight:700; margin-bottom:10px; }
-    h2{ font-size:clamp(24px,3vw,32px); }
-    h3{ font-size:18px; }
-    p{ margin-bottom:10px; }
-    .grid-3{ display:grid; grid-template-columns: repeat(3,1fr); gap:18px; }
-    .grid-2{ display:grid; grid-template-columns: repeat(2,1fr); gap:18px; }
-    .card{
-      background: linear-gradient(180deg, #102653, #0d2147);
-      border:1px solid var(--border); border-radius:18px; padding:18px;
-      box-shadow:0 10px 28px rgba(0,0,0,.28);
-    }
-    .list{ padding-left:18px; }
-    .list li{ margin:6px 0; }
+/* Hero + Slider */
+.hero{position:relative;isolation:isolate}
+.hero-media{position:relative;height:clamp(340px,46vw,520px);overflow:hidden;border-bottom:2px solid #ffffff14}
+.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#00000066 0%,#07142d 96%);z-index:1}
+.hero-inner{position:relative;z-index:2;margin-top:-140px}
+.hero-card{
+  background:linear-gradient(180deg,#102653,#0d2147);
+  border:1px solid var(--border);border-radius:18px;padding:22px;
+  box-shadow:0 18px 40px rgba(0,0,0,.35);max-width:880px
+}
+.kicker{color:var(--accent-2);font-weight:900;letter-spacing:.6px;font-size:13px;text-transform:uppercase}
+h1{margin:8px 0 10px;font-size:clamp(28px,4.8vw,46px);line-height:1.08}
+.lead{color:var(--muted);font-size:clamp(15px,2.4vw,18px);max-width:64ch}
+.cta-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
 
-    /* Table */
-    .table-wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid var(--border); border-radius:14px; }
-    table{ width:100%; border-collapse:collapse; font-size:15px; min-width:640px; background:transparent; }
-    th,td{ padding:10px 12px; border-bottom:1px solid var(--border); }
-    th{ text-align:left; color:var(--muted); font-weight:700; }
+/* Slider controls */
+.slider{position:relative;width:100%;height:100%}
+.slides{position:absolute;inset:0}
+.slide{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center;opacity:0;
+  transition:opacity .8s ease;filter:saturate(1.06)
+}
+.slide.is-active{opacity:1}
+.ctrl{
+  position:absolute;z-index:3;top:50%;transform:translateY(-50%);
+  background:rgba(0,0,0,.35);border:1px solid #ffffff33;color:#fff;
+  font-size:24px;width:44px;height:44px;border-radius:999px;
+  display:grid;place-items:center;cursor:pointer
+}
+.ctrl:hover{background:rgba(0,0,0,.5)}
+.ctrl.prev{left:12px}
+.ctrl.next{right:12px}
+.dots{
+  position:absolute;z-index:3;left:0;right:0;bottom:12px;
+  display:flex;gap:8px;justify-content:center
+}
+.dots button{
+  width:8px;height:8px;border-radius:999px;border:1px solid #ffffffaa;background:#ffffff55;
+  box-shadow:0 0 0 2px rgba(0,0,0,.15);cursor:pointer
+}
+.dots button.is-active{background:#ffffff;border-color:#ffffff}
 
-    /* Hero */
-    .hero{ position:relative; overflow:hidden; }
-    .hero img{ width:100%; height:auto; }
+/* Sections & Cards */
+section{padding:60px 0}
+h2{font-size:clamp(24px,3vw,32px);margin-bottom:10px}
+h3{font-size:18px;margin-bottom:8px}
+.card{
+  background:linear-gradient(180deg,#102653,#0d2147);
+  border:1px solid var(--border);border-radius:18px;padding:18px;
+  box-shadow:0 10px 28px rgba(0,0,0,.28)
+}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.list{padding-left:18px}
+.list li{margin:6px 0}
 
-    /* Footer */
-    footer{ padding:40px 0; border-top:1px solid var(--border); color:var(--muted); font-size:14px; text-align:center; }
+/* Table */
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:14px}
+table{width:100%;border-collapse:collapse;font-size:15px;min-width:640px;background:transparent}
+th,td{padding:10px 12px;border-bottom:1px solid var(--border)}
+th{text-align:left;color:var(--muted);font-weight:700}
 
-    /* Modal */
-    .modal-backdrop{
-      position:fixed; inset:0; background:rgba(0,0,0,.6); display:none; z-index:100;
-    }
-    .modal{
-      position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:101;
-    }
-    .modal[open], .modal-backdrop[open]{ display:flex; }
-    .modal-card{
-      width:min(920px, 92vw); max-height:88vh; overflow:auto;
-      background: linear-gradient(180deg, #102653, #0d2147);
-      border:1px solid var(--border); border-radius:18px; padding:18px;
-      box-shadow:0 20px 60px rgba(0,0,0,.45);
-    }
-    .modal-head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
-    .close-x{ background:transparent; border:1px solid var(--border); color:#fff; border-radius:10px; padding:6px 10px; cursor:pointer; }
+/* Footer */
+footer{padding:40px 0;border-top:1px solid var(--border);color:var(--muted);font-size:14px;text-align:center}
 
-    /* Responsive */
-    @media (max-width: 900px){
-      .grid-3, .grid-2{ grid-template-columns:1fr; }
-      .nav-links{ display:none; }
-      .menu-btn{ display:inline-flex; }
-    }
-  </style>
+/* Modal */
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;z-index:100}
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:101}
+.modal[open],.modal-backdrop[open]{display:flex}
+.modal-card{
+  width:min(920px,92vw);max-height:88vh;overflow:auto;
+  background:linear-gradient(180deg,#102653,#0d2147);
+  border:1px solid var(--border);border-radius:18px;padding:18px;
+  box-shadow:0 20px 60px rgba(0,0,0,.45)
+}
+.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.close-x{background:transparent;border:1px solid var(--border);color:#fff;border-radius:10px;padding:6px 10px;cursor:pointer}
+
+/* Responsive tweaks */
+@media(max-width:900px){
+  .grid-3,.grid-2{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .menu-btn{display:inline-flex}
+  .ctrl{width:52px;height:52px;font-size:28px}
+}
+</style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo">GÜ</div>
-        <span>Gaziantep Üniversitesi Vakfı</span>
-      </div>
-      <nav class="nav-links">
-        <a href="#hakkimizda">Hakkımızda</a>
-        <a href="#burslar">Burslar</a>
-        <a href="#bagis" class="btn btn-danger">Bağış Yap</a>
-      </nav>
-      <button class="menu-btn" aria-controls="mobile-menu" aria-expanded="false" onclick="toggleMenu()">Menü</button>
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <div class="logo"> </div><span>Gaziantep Üniversitesi Vakfı</span>
     </div>
-    <div id="mobile-menu" class="container mobile-menu" hidden>
-      <a href="#hakkimizda" onclick="toggleMenu(false)">Hakkımızda</a>
-      <a href="#burslar" onclick="toggleMenu(false)">Burslar</a>
-      <a href="#bagis" onclick="toggleMenu(false)">Bağış Yap</a>
+    <nav class="nav-links">
+      <a href="#hakkimizda">Hakkımızda</a>
+      <a href="#burslar">Burslar</a>
+      <a href="#bagis" class="btn btn-danger">Bağış Yap</a>
+    </nav>
+    <button class="menu-btn" aria-controls="mobile-menu" aria-expanded="false" onclick="toggleMenu()">Menü</button>
+  </div>
+  <div id="mobile-menu" class="container mobile-menu" hidden>
+    <a href="#hakkimizda" onclick="toggleMenu(false)">Hakkımızda</a>
+    <a href="#burslar" onclick="toggleMenu(false)">Burslar</a>
+    <a href="#bagis" onclick="toggleMenu(false)">Bağış Yap</a>
+  </div>
+</header>
+
+<main id="icerik">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-media" aria-hidden="true">
+      <div class="slider" role="region" aria-roledescription="slayt" aria-label="Kampüs görselleri" tabindex="0">
+        <div class="slides">
+          <img src="./assets/foto1.jpg" alt="GAÜN Kampüs – Gece" class="slide is-active"/>
+          <img src="./assets/foto2.jpg" alt="GAÜN Kampüs – Havadan" class="slide"/>
+          <img src="./assets/foto3.jpg" alt="GAÜN Ana Kapı" class="slide"/>
+          <img src="./assets/foto4.jpg" alt="GAÜN Kampüs – Gündüz" class="slide"/>
+          <img src="./assets/foto5.jpg" alt="15 Temmuz Anıtı ve Bayraklar" class="slide"/>
+        </div>
+        <button class="ctrl prev" aria-label="Önceki görsel">‹</button>
+        <button class="ctrl next" aria-label="Sonraki görsel">›</button>
+        <div class="dots" aria-hidden="true"></div>
+      </div>
     </div>
-  </header>
 
-  <main id="icerik">
-    <!-- HERO -->
-    <div class="hero">
-      <img src="./assets/foto1.jpg" alt="GAÜN Kampüsü">
-    </div>
-
-    <!-- HAKKIMIZDA -->
-    <section id="hakkimizda">
-      <div class="container">
-        <h2>Hakkımızda</h2>
-        <p class="muted">Gaziantep Üniversitesi Vakfı, öğrencilerin eğitimine destek olmak ve üniversitenin bilimsel, sosyal ve kültürel faaliyetlerini güçlendirmek amacıyla kurulmuştur.</p>
-
-        <div class="grid-3" style="margin-top:18px">
-          <div class="card">
-            <h3>Vizyon</h3>
-            <p>Fırsat eşitliği temelinde, nitelikli eğitime erişimi artıran bölgemizin örnek vakfı olmak.</p>
-          </div>
-          <div class="card">
-            <h3>Misyon</h3>
-            <p>Bağışçılar ve paydaşlarla güçlü iş birlikleri kurarak burs, proje ve yatırım faaliyetleriyle üniversite ekosistemini desteklemek.</p>
-          </div>
-          <div class="card">
-            <h3>İlkeler</h3>
-            <ul class="list">
-              <li>Şeffaf mali raporlama</li>
-              <li>Eşitlikçi burs süreçleri</li>
-              <li>Etki odaklı kaynak kullanımı</li>
-            </ul>
-          </div>
-        </div>
-
-        <h2 style="margin-top:40px;">Yönetim ve Kurullar</h2>
-        <div class="grid-3" style="margin-top:16px">
-          <div class="card">
-            <h3>Yönetim Kurulu</h3>
-            <ul class="list">
-              <li>Prof. Dr. Mehmet Tarakçıoğlu</li>
-              <li>Prof. Dr. Emrah Cinkara</li>
-              <li>Prof. Dr. Fahrettin Göğüş</li>
-              <li>Prof. Dr. Oğuzhan Saygılı</li>
-              <li>Prof. Dr. Rüstem Yanar</li>
-              <li>Prof. Dr. Sacid Abdussemet Çoban</li>
-              <li>Dr. Öğr. Üyesi Mehmet Fatih Sert</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Denetleme Kurulu</h3>
-            <ul class="list">
-              <li>Doç. Dr. Mehmet Aytekin</li>
-              <li>İbrahim Tuğsuz</li>
-              <li>İhsan Karslıgil</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Genel Kurul</h3>
-            <ul class="list">
-              <li><strong>Başkan:</strong> Prof. Dr. Sait Mesut Doğan</li>
-              <li>Dr. Asım Güzelbey</li>
-              <li>Mehmet Okan</li>
-              <li>Hüseyin Arıca</li>
-              <li>Dr. İhsan Karslıgil</li>
-              <li>Doç. Dr. Hakkı Kazaz</li>
-              <li>Ramazan Öğücü</li>
-              <li>İbrahim Tuğsuz</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card" style="margin-top:18px">
-          <h3>Vakıf Senedi</h3>
-          <p class="muted">Vakıf tüzel kişiliğine ilişkin resmi senet.</p>
-          <a class="btn btn-primary" href="./assets/vakif-senedi.pdf" target="_blank" rel="noopener">Vakıf Senedi (PDF)</a>
+    <div class="container hero-inner">
+      <div class="hero-card">
+        <div class="kicker">Gaziantep Üniversitesi için varız.</div>
+        <h1>Gaziantep Üniversitesi Vakfı</h1>
+        <p class="lead">Burs programları, bağışçılar ve sosyal sorumluluk projeleriyle öğrencilerimizin eğitimine sürdürülebilir destek sağlıyoruz.</p>
+        <div class="cta-row">
+          <a class="btn btn-danger" href="#bagis">Hemen Bağış Yap</a>
+          <a class="btn btn-primary" href="#burslar">Burs Programları</a>
         </div>
       </div>
-    </section>
-
-    <!-- BURS -->
-    <section id="burslar">
-      <div class="container">
-        <h2>Burs Programları</h2>
-
-        <div class="grid-3">
-          <div class="card">
-            <h3>Başvuru Koşulları (Özet)</h3>
-            <ul class="list">
-              <li>Gaziantep Üniversitesi’nde aktif öğrenci olmak</li>
-              <li>Akademik başarı kriterlerini sağlamak</li>
-              <li>Maddi desteğe ihtiyaç duymak</li>
-            </ul>
-            <!-- Belgeler Butonu -->
-            <div style="margin-top:12px;">
-              <button id="belgelerBtn" class="btn btn-primary">Başvuru Belgeleri (Tıkla)</button>
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>Takvim</h3>
-            <p><strong>1–20 Ekim</strong> Başvurular<br>
-               <strong>21–31 Ekim</strong> Değerlendirme<br>
-               <strong>5 Kasım</strong> Sonuç ilanı</p>
-          </div>
-
-          <div class="card">
-            <h3>SSS</h3>
-            <details><summary>Burs süresi nedir?</summary><p>9 ay (Ekim–Haziran) süreyle ödenir.</p></details>
-            <details><summary>Aynı yıl birden fazla burs alınır mı?</summary><p>Hayır, bir akademik yılda tek burs verilir.</p></details>
-            <details><summary>Belgeler nasıl yüklenir?</summary><p>PDF/JPG formatında çevrim içi başvuru formuna eklersiniz.</p></details>
-          </div>
-        </div>
-
-        <!-- Başvuru Formu Butonu -->
-        <div style="text-align:center; margin-top:24px;">
-          <a href="https://forms.gle/MxdT7LBTXn7YcQBBA"
-             class="btn btn-danger"
-             style="font-size:20px; padding:18px 36px; border-radius:18px;"
-             target="_blank" rel="noopener noreferrer">
-             🎓 Burs Başvuru Formu
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- BAĞIŞ -->
-    <section id="bagis">
-      <div class="container">
-        <h2>Bağış Yap</h2>
-        <div class="card">
-          <h3>Banka Bilgileri</h3>
-          <div class="table-wrap">
-            <table aria-label="Banka hesap bilgileri">
-              <thead>
-                <tr>
-                  <th>Banka</th>
-                  <th>Hesap Türü</th>
-                  <th>Şube</th>
-                  <th>IBAN</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Halk Bankası</td>
-                  <td>TL</td>
-                  <td>Gaziantep Üniversitesi</td>
-                  <td><code>TR14 0001 2001 3380 0016 1000 07</code></td>
-                </tr>
-                <tr>
-                  <td>Halk Bankası</td>
-                  <td>Euro</td>
-                  <td>Gaziantep Üniversitesi</td>
-                  <td><code>TR42 0001 2001 3380 0058 1000 18</code></td>
-                </tr>
-                <tr>
-                  <td>Halk Bankası</td>
-                  <td>USD</td>
-                  <td>Gaziantep Üniversitesi</td>
-                  <td><code>TR37 0001 2001 3380 0058 1000 11</code></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p style="margin-top:10px" class="muted">Açıklama: <code>Ad Soyad, GÜ Vakfı Bağış</code></p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div>© <span id="yil"></span> Gaziantep Üniversitesi Vakfı</div>
-  </footer>
-
-  <!-- Modal: Başvuru Belgeleri -->
-  <div id="belgelerBackdrop" class="modal-backdrop" aria-hidden="true"></div>
-  <div id="belgelerModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="belgelerTitle" aria-hidden="true">
-    <div class="modal-card">
-      <div class="modal-head">
-        <h3 id="belgelerTitle">Başvuru Belgeleri</h3>
-        <button class="close-x" id="belgelerClose" aria-label="Kapat">Kapat ✕</button>
-      </div>
-      <ul class="list">
-        <li>1. Yüksek Öğretim Kurumları Sınavı (YKS) Sonuç Belgelerinin örneği, (Puan türlerine göre Türkiye genelindeki başarı sıralamalarını/puanlarını gösteren belge örneği) (e-devlet veya ÖSYM’den alınabilir)</li>
-        <li>2. Yerleştiği yükseköğretim kurumunu gösteren YKS Belge örneği (e-devlet veya ÖSYM’den alınabilir),</li>
-        <li>3. Öğretim kurumundan alınmış, devam edeceği sınıfı gösteren onaylı Öğrenci Belgesi</li>
-        <li>4. Nüfus cüzdanı veya yeni kimlik kartınızın arkalı ve önlü fotokopisi,</li>
-        <li>5. Adli Sicil Kaydı dökümü (e-devletten alınabilir),</li>
-        <li>6. Ara sınıflarda öğrenim görenler: Öğrenim süresince aldıkları dersleri, notları, genel not ortalamasını gösteren öğretim kurumundan onaylı not dökümü belgesi (transkript)**Hazırlık sınıfından 1.sınıfa geçen öğrencilerin hazırlıktan başarılı olarak geçmiş olması gerekmektedir.</li>
-        <li>7. Vukuatlı Nüfus Kayıt Örneği (Tüm aile fertlerinin gösterildiği anne veya baba adına alınmış belge (e-devletten alınabilir)</li>
-        <li>8. Ailenin ikamet ettiği yerleşim yerini gösteren Yerleşim Yeri ve Diğer Adres Belgesi (e-devlet alınabilir) (Nüfus Kayıt Örneğinin alt kısmında adres bilgisi varsa bu belgeyi almanıza gerek yoktur.</li>
-        <li>9. Ailenin mali durumunu gösteren belgeler: (e-devletten alınan tüm belgeler, barkodlu özelliği varsa mutlaka barkodlu olarak alınmalı ve belgelerin kimin adına olduğu mutlaka görünmelidir.)</li>
-        <li>a. Çalışanlar için, onaylı maaş bordrosu (Kamu kurumlarında çalışanlar e-devlet’ten alabilirler.)</li>
-        <li>b. Serbest çalışan anne baba için; son yılları gösteren gelir vergisi beyannamesi / kurumlar vergisi beyannamesi dökümü (www.gib.gov.tr adresinden alınabilir.)</li>
-        <li>c. Emekliler için; aylık maaşı gösterir belge (e-devletten alınabilir.) Önemli Not: Emekli olmakla birlikte aktif çalışan anne, baba için onaylı maaş bordrosu da eklenmelidir.</li>
-        <li>d. Çalışmayan, geliri olmayan anne ve baba için; Sosyal Güvenlik Kurumunda kaydı olmadığına dair belge (4A/4B/4C Hizmet Dökümü ve Sosyal Güvenlik Kayıt Belgesi) (e-devletten alınabilir. E-devlete giriş yaptıktan sonra izleyeceğiniz adımlar: SGK Tescil ve Hizmet Dökümü - Hizmet Dökümü - Sosyal Güvenlik Kayıt Belgesi)</li>
-        <li>e. Tarım ve hayvancılıkla uğraşan anne, baba için; ürün/hayvan varlığı ve gelir durum dökümü (e-devletteki Tarım ve Orman Bakanlığı sayfasından alınabilir.)</li>
-        <li>f. Anne ve baba adına tapu bilgilerini gösterir liste ve listedeki, hisse ve m² bilgisini gösterir detaylı döküm belgesi (mutlaka e-devletten alınmalıdır). Önemli not: Anne, baba adına tapu kaydı yoksa olmadığına dair belge eklenmelidir (mutlaka e-devletten alınmalıdır).</li>
-        <li>g. Anne ve baba adına araç varsa, araç kayıt belgesi; yoksa e-devletten isim görünür halde kayıt olmadığına dair çıktı/ekran görüntüsü (mutlaka e-devletten alınmalıdır).</li>
-        <li>h. Aile kirada oturuyor ise (varsa) kira kontratı örneği</li>
-        <li>ı. Risk Merkezi Raporu Belgesi (hem anne hem baba adına e-devletten alınmalıdır.)</li>
-        <li>Not: Anne, baba dışında (anneanne, dede, amca, teyze, kardeş vb.) ailenin geçimini sağlayan varsa, bu kişilerin gelir durumu yukarıdaki maddelerden hangisine uygun ise belirtilen şekilde belge alınması ve forma eklenmesi gerekmektedir.</li>
-      </ul>
     </div>
   </div>
 
-  <script>
-    // Mobil menü
-    function toggleMenu(force){
-      const m=document.getElementById('mobile-menu');
-      const btn=document.querySelector('.menu-btn');
-      const willOpen = force!==undefined ? force : m.hasAttribute('hidden');
-      if(willOpen){ m.removeAttribute('hidden'); m.style.display='block'; btn.setAttribute('aria-expanded','true'); }
-      else{ m.setAttribute('hidden',''); m.style.display='none'; btn.setAttribute('aria-expanded','false'); }
-    }
+  <!-- HAKKIMIZDA -->
+  <section id="hakkimizda">
+    <div class="container">
+      <h2>Hakkımızda</h2>
+      <p>Gaziantep Üniversitesi Vakfı, öğrencilerin eğitimine destek olmak ve üniversitenin bilimsel, sosyal ve kültürel faaliyetlerini güçlendirmek amacıyla kurulmuştur.</p>
 
-    // Yıl
-    document.getElementById('yil') && (document.getElementById('yil').textContent = new Date().getFullYear());
+      <div class="grid-3" style="margin-top:18px">
+        <div class="card">
+          <h3>Vizyon</h3>
+          <p>Fırsat eşitliği temelinde nitelikli eğitime erişimi artıran bölgemizin örnek vakfı olmak.</p>
+        </div>
+        <div class="card">
+          <h3>Misyon</h3>
+          <p>Bağışçılar ve paydaşlarla güçlü iş birlikleri kurarak burs, proje ve yatırım faaliyetleriyle üniversite ekosistemini desteklemek.</p>
+        </div>
+        <div class="card">
+          <h3>İlkeler</h3>
+          <ul class="list">
+            <li>Şeffaf mali raporlama</li>
+            <li>Eşitlikçi burs süreçleri</li>
+            <li>Etki odaklı kaynak kullanımı</li>
+          </ul>
+        </div>
+      </div>
 
-    // Belgeler Modal
-    const openBtn = document.getElementById('belgelerBtn');
-    const modal = document.getElementById('belgelerModal');
-    const backdrop = document.getElementById('belgelerBackdrop');
-    const closeBtn = document.getElementById('belgelerClose');
+      <h2 style="margin-top:40px;">Yönetim ve Kurullar</h2>
+      <div class="grid-3" style="margin-top:16px">
+        <div class="card">
+          <h3>Genel Kurul</h3>
+          <ul class="list">
+            <li><strong>Başkan:</strong> Prof. Dr. Sait Mesut Doğan</li>
+            <li>Dr. Asım Güzelbey</li>
+            <li>Mehmet Okan</li>
+            <li>Hüseyin Arıca</li>
+            <li>Dr. İhsan Karslıgil</li>
+            <li>Doç. Dr. Hakkı Kazaz</li>
+            <li>Ramazan Öğücü</li>
+            <li>İbrahim Tuğsuz</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Yönetim Kurulu</h3>
+          <ul class="list">
+            <li>Prof. Dr. Mehmet Tarakçıoğlu</li>
+            <li>Prof. Dr. Emrah Cinkara</li>
+            <li>Prof. Dr. Fahrettin Göğüş</li>
+            <li>Prof. Dr. Oğuzhan Saygılı</li>
+            <li>Prof. Dr. Rüstem Yanar</li>
+            <li>Prof. Dr. Sacid Abdussemet Çoban</li>
+            <li>Dr. Öğr. Üyesi Mehmet Fatih Sert</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Denetleme Kurulu</h3>
+          <ul class="list">
+            <li>Doç. Dr. Mehmet Aytekin</li>
+            <li>İbrahim Tuğsuz</li>
+            <li>İhsan Karslıgil</li>
+          </ul>
+        </div>
+      </div>
 
-    function openModal(){
-      modal.setAttribute('open','');
-      modal.setAttribute('aria-hidden','false');
-      backdrop.setAttribute('open','');
-      backdrop.setAttribute('aria-hidden','false');
-      // odak
-      closeBtn && closeBtn.focus();
-      document.addEventListener('keydown', escClose);
-    }
-    function closeModal(){
-      modal.removeAttribute('open');
-      modal.setAttribute('aria-hidden','true');
-      backdrop.removeAttribute('open');
-      backdrop.setAttribute('aria-hidden','true');
-      openBtn && openBtn.focus();
-      document.removeEventListener('keydown', escClose);
-    }
-    function escClose(e){ if(e.key==='Escape') closeModal(); }
+      <div class="card" style="margin-top:18px">
+        <h3>Vakıf Senedi</h3>
+        <p>Vakıf tüzel kişiliğine ilişkin resmi senet.</p>
+        <a class="btn btn-primary" href="./assets/vakif-senedi.pdf" target="_blank" rel="noopener">Vakıf Senedi (PDF)</a>
+      </div>
+    </div>
+  </section>
 
-    openBtn && openBtn.addEventListener('click', openModal);
-    closeBtn && closeBtn.addEventListener('click', closeModal);
-    backdrop && backdrop.addEventListener('click', closeModal);
-  </script>
+  <!-- BURS -->
+  <section id="burslar">
+    <div class="container">
+      <h2>Burs Programları</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Başvuru Koşulları (Özet)</h3>
+          <ul class="list">
+            <li>Gaziantep Üniversitesi’nde aktif öğrenci olmak</li>
+            <li>Akademik başarı kriterlerini sağlamak</li>
+            <li>Maddi desteğe ihtiyaç duymak</li>
+          </ul>
+          <div style="margin-top:12px">
+            <button id="belgelerBtn" class="btn btn-primary">Başvuru Belgeleri (Tıkla)</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Takvim</h3>
+          <p><strong>1–20 Ekim</strong> Başvurular<br>
+             <strong>21–31 Ekim</strong> Değerlendirme<br>
+             <strong>5 Kasım</strong> Sonuç ilanı</p>
+        </div>
+
+        <div class="card">
+          <h3>SSS</h3>
+          <details><summary>Burs süresi nedir?</summary><p>9 ay (Ekim–Haziran) süreyle ödenir.</p></details>
+          <details><summary>Aynı yıl birden fazla burs alınır mı?</summary><p>Hayır, bir akademik yılda tek burs verilir.</p></details>
+          <details><summary>Belgeler nasıl yüklenir?</summary><p>PDF/JPG formatında çevrim içi başvuru formuna eklersiniz.</p></details>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:24px">
+        <a href="https://forms.gle/MxdT7LBTXn7YcQBBA"
+           class="btn btn-danger"
+           style="font-size:20px;padding:18px 36px;border-radius:18px"
+           target="_blank" rel="noopener">
+           🎓 Burs Başvuru Formu
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAĞIŞ -->
+  <section id="bagis">
+    <div class="container">
+      <h2>Bağış Yap</h2>
+      <div class="card">
+        <h3>Banka Bilgileri</h3>
+        <div class="table-wrap">
+          <table aria-label="Banka hesap bilgileri">
+            <thead>
+              <tr>
+                <th>Banka</th>
+                <th>Hesap Türü</th>
+                <th>Şube</th>
+                <th>IBAN</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Halk Bankası</td>
+                <td>TL</td>
+                <td>Gaziantep Üniversitesi</td>
+                <td><code>TR14 0001 2001 3380 0016 1000 07</code></td>
+              </tr>
+              <tr>
+                <td>Halk Bankası</td>
+                <td>Euro</td>
+                <td>Gaziantep Üniversitesi</td>
+                <td><code>TR42 0001 2001 3380 0058 1000 18</code></td>
+              </tr>
+              <tr>
+                <td>Halk Bankası</td>
+                <td>USD</td>
+                <td>Gaziantep Üniversitesi</td>
+                <td><code>TR37 0001 2001 3380 0058 1000 11</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top:10px" class="muted">Açıklama: <code>Ad Soyad, GÜ Vakfı Bağış</code></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div>© <span id="yil"></span> Gaziantep Üniversitesi Vakfı</div>
+</footer>
+
+<!-- Modal: Başvuru Belgeleri -->
+<div id="belgelerBackdrop" class="modal-backdrop" aria-hidden="true"></div>
+<div id="belgelerModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="belgelerTitle" aria-hidden="true">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h3 id="belgelerTitle">Başvuru Belgeleri</h3>
+      <button class="close-x" id="belgelerClose" aria-label="Kapat">Kapat ✕</button>
+    </div>
+    <ul class="list">
+      <li>1. Yüksek Öğretim Kurumları Sınavı (YKS) Sonuç Belgelerinin örneği, (Puan türlerine göre Türkiye genelindeki başarı sıralamalarını/puanlarını gösteren belge örneği) (e-devlet veya ÖSYM’den alınabilir)</li>
+      <li>2. Yerleştiği yükseköğretim kurumunu gösteren YKS Belge örneği (e-devlet veya ÖSYM’den alınabilir),</li>
+      <li>3. Öğretim kurumundan alınmış, devam edeceği sınıfı gösteren onaylı Öğrenci Belgesi</li>
+      <li>4. Nüfus cüzdanı veya yeni kimlik kartınızın arkalı ve önlü fotokopisi,</li>
+      <li>5. Adli Sicil Kaydı dökümü (e-devletten alınabilir),</li>
+      <li>6. Ara sınıflarda öğrenim görenler: Öğrenim süresince aldıkları dersleri, notları, genel not ortalamasını gösteren öğretim kurumundan onaylı not dökümü belgesi (transkript)**Hazırlık sınıfından 1.sınıfa geçen öğrencilerin hazırlıktan başarılı olarak geçmiş olması gerekmektedir.</li>
+      <li>7. Vukuatlı Nüfus Kayıt Örneği (Tüm aile fertlerinin gösterildiği anne veya baba adına alınmış belge (e-devletten alınabilir)</li>
+      <li>8. Ailenin ikamet ettiği yerleşim yerini gösteren Yerleşim Yeri ve Diğer Adres Belgesi (e-devlet alınabilir) (Nüfus Kayıt Örneğinin alt kısmında adres bilgisi varsa bu belgeyi almanıza gerek yoktur.</li>
+      <li>9. Ailenin mali durumunu gösteren belgeler: (e-devletten alınan tüm belgeler, barkodlu özelliği varsa mutlaka barkodlu olarak alınmalı ve belgelerin kimin adına olduğu mutlaka görünmelidir.)</li>
+      <li>a. Çalışanlar için, onaylı maaş bordrosu (Kamu kurumlarında çalışanlar e-devlet’ten alabilirler.)</li>
+      <li>b. Serbest çalışan anne baba için; son yılları gösteren gelir vergisi beyannamesi / kurumlar vergisi beyannamesi dökümü (www.gib.gov.tr adresinden alınabilir.)</li>
+      <li>c. Emekliler için; aylık maaşı gösterir belge (e-devletten alınabilir.) Önemli Not: Emekli olmakla birlikte aktif çalışan anne, baba için onaylı maaş bordrosu da eklenmelidir.</li>
+      <li>d. Çalışmayan, geliri olmayan anne ve baba için; Sosyal Güvenlik Kurumunda kaydı olmadığına dair belge (4A/4B/4C Hizmet Dökümü ve Sosyal Güvenlik Kayıt Belgesi) (e-devletten alınabilir. E-devlete giriş yaptıktan sonra izleyeceğiniz adımlar: SGK Tescil ve Hizmet Dökümü - Hizmet Dökümü - Sosyal Güvenlik Kayıt Belgesi)</li>
+      <li>e. Tarım ve hayvancılıkla uğraşan anne, baba için; ürün/hayvan varlığı ve gelir durum dökümü (e-devletteki Tarım ve Orman Bakanlığı sayfasından alınabilir.)</li>
+      <li>f. Anne ve baba adına tapu bilgilerini gösterir liste ve listedeki, hisse ve m² bilgisini gösterir detaylı döküm belgesi (mutlaka e-devletten alınmalıdır). Önemli not: Anne, baba adına tapu kaydı yoksa olmadığına dair belge eklenmelidir (mutlaka e-devletten alınmalıdır).</li>
+      <li>g. Anne ve baba adına araç varsa, araç kayıt belgesi; yoksa e-devletten isim görünür halde kayıt olmadığına dair çıktı/ekran görüntüsü (mutlaka e-devletten alınmalıdır).</li>
+      <li>h. Aile kirada oturuyor ise (varsa) kira kontratı örneği</li>
+      <li>ı. Risk Merkezi Raporu Belgesi (hem anne hem baba adına e-devletten alınmalıdır.)</li>
+      <li>Not: Anne, baba dışında (anneanne, dede, amca, teyze, kardeş vb.) ailenin geçimini sağlayan varsa, bu kişilerin gelir durumu yukarıdaki maddelerden hangisine uygun ise belirtilen şekilde belge alınması ve forma eklenmesi gerekmektedir.</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+// Mobil menü
+function toggleMenu(force){
+  const m=document.getElementById('mobile-menu');
+  const btn=document.querySelector('.menu-btn');
+  const willOpen = force!==undefined ? force : m.hasAttribute('hidden');
+  if(willOpen){ m.removeAttribute('hidden'); m.style.display='block'; btn.setAttribute('aria-expanded','true'); }
+  else{ m.setAttribute('hidden',''); m.style.display='none'; btn.setAttribute('aria-expanded','false'); }
+}
+
+// Yıl
+document.getElementById('yil').textContent = new Date().getFullYear();
+
+// === Slider ===
+document.addEventListener("DOMContentLoaded", function(){
+  const root = document.querySelector('.slider');
+  if(!root) return;
+  const slides = Array.from(root.querySelectorAll('.slide'));
+  const prev = root.querySelector('.ctrl.prev');
+  const next = root.querySelector('.ctrl.next');
+  const dotsWrap = root.querySelector('.dots');
+  const INTERVAL = 4500; // ms
+  let i = 0, timer = null, hovering = false;
+
+  // Dots
+  slides.forEach((_, idx) => {
+    const b = document.createElement('button');
+    b.setAttribute('aria-label', `Slayt ${idx+1}`);
+    b.addEventListener('click', ()=> go(idx));
+    dotsWrap.appendChild(b);
+  });
+  const dots = Array.from(dotsWrap.children);
+
+  function show(idx){
+    slides.forEach((el, k)=> el.classList.toggle('is-active', k===idx));
+    dots.forEach((el, k)=> el.classList.toggle('is-active', k===idx));
+  }
+  function go(idx){ i = (idx + slides.length) % slides.length; show(i); }
+  function nextFn(){ go(i+1); }
+  function prevFn(){ go(i-1); }
+
+  prev.addEventListener('click', nextFn ? prevFn : ()=>{});
+  next.addEventListener('click', nextFn);
+
+  // Klavye
+  root.addEventListener('keydown', (e)=>{
+    if(e.key==='ArrowRight') nextFn();
+    else if(e.key==='ArrowLeft') prevFn();
+  });
+
+  // Auto-play
+  function play(){
+    if(timer) clearInterval(timer);
+    timer = setInterval(()=>{ if(!hovering) nextFn(); }, INTERVAL);
+  }
+  play();
+
+  // Hover/focus duraklat
+  root.addEventListener('mouseenter', ()=> hovering = true);
+  root.addEventListener('mouseleave', ()=> hovering = false);
+  root.addEventListener('focusin',   ()=> hovering = true);
+  root.addEventListener('focusout',  ()=> hovering = false);
+
+  // Preload
+  slides.forEach(img => { const im = new Image(); im.src = img.getAttribute('src'); });
+
+  // Başlangıç
+  show(i);
+});
+
+// Modal: Başvuru Belgeleri
+const openBtn = document.getElementById('belgelerBtn');
+const modal = document.getElementById('belgelerModal');
+const backdrop = document.getElementById('belgelerBackdrop');
+const closeBtn = document.getElementById('belgelerClose');
+
+function openModal(){
+  modal.setAttribute('open','');
+  modal.setAttribute('aria-hidden','false');
+  backdrop.setAttribute('open','');
+  backdrop.setAttribute('aria-hidden','false');
+  closeBtn && closeBtn.focus();
+  document.addEventListener('keydown', escClose);
+}
+function closeModal(){
+  modal.removeAttribute('open');
+  modal.setAttribute('aria-hidden','true');
+  backdrop.removeAttribute('open');
+  backdrop.setAttribute('aria-hidden','true');
+  openBtn && openBtn.focus();
+  document.removeEventListener('keydown', escClose);
+}
+function escClose(e){ if(e.key==='Escape') closeModal(); }
+
+openBtn && openBtn.addEventListener('click', openModal);
+closeBtn && closeBtn.addEventListener('click', closeModal);
+backdrop && backdrop.addEventListener('click', closeModal);
+</script>
 </body>
 </html>
